@@ -2,11 +2,12 @@
     id="{{ $name }}"
     name="{{ $name }}"
     type="text"
+    autocomplete="off"
     placeholder="{{ $placeholder }}"
     class="{{ $styles['searchInput'] }}"
 
     wire:keydown.enter.prevent=""
-    wire:model.debounce.300ms="searchTerm"
+    wire:model.live.debounce.300ms="searchTerm"
 
     x-on:click="isOpen = true"
     x-on:keydown="isOpen = true"
